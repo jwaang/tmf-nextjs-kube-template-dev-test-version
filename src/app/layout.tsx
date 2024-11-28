@@ -4,6 +4,7 @@ import Head from "next/head"
 import Footer from "~components/layout/footer"
 import TopNav from "~components/layout/topNav"
 import ApolloClientProvider from "~lib/apollo-client-provider"
+import { WatchListProvider } from 'src/providers/WatchListProvider'
 
 export const metadata: Metadata = {
   title: "Next Test Template",
@@ -25,11 +26,13 @@ export default function RootLayout({
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <body className="min-h-screen bg-gradient-to-b from-black via-blue-900 to-black text-blue-100 p-8">
-          <TopNav/>
-          <div className="w-full mx-12 lg:mx-0 my-12 flex items-center justify-center">
-            {children}
-          </div>
-          <Footer/>
+          <TopNav />
+          <WatchListProvider>
+            <div className="w-full lg:mx-0 my-12 flex items-center justify-center">
+              {children}
+            </div>
+          </WatchListProvider>
+          <Footer />
         </body>
       </html>
     </ApolloClientProvider>

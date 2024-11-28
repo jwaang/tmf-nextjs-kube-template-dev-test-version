@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.11.8",
+    "html-react-parser": "^5.1.18",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

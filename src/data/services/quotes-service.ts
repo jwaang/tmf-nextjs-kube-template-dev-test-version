@@ -1,29 +1,30 @@
+import { ApolloClient, NormalizedCacheObject } from "@apollo/client"
+import { GET_COMPANY_DATA } from "~data/queries"
 import type { Quote, RealtimeQuotes } from 'src/types/quotes'
 import realtimeQuotesData from 'src/data/mocks/realtime-quotes.json'
 
-export const getQuote = (instrumentId: number): Quote => {
-  return {
-    currentPrice: {
-      amount: 5.0,
-      currencyCode: 'USD',
-    },
-    dividendYield: 0.02,
-    lastTradeDate: new Date().toISOString(),
-    marketCap: {
-      amount: 1000000000000,
-      currencyCode: 'USD',
-    },
-    revenueGrowth: 0.2,
-    grossMargin: 0.5,
-    peRatio: 15,
-    beta5y: 1.2,
-    percentChange: 0.08,
-    priceChange: {
-      amount: 9.12
-    },
+class QuotesService {
+  private client: ApolloClient<NormalizedCacheObject>
+
+  constructor(apolloClient: ApolloClient<NormalizedCacheObject>) {
+    this.client = apolloClient
+  }
+
+  async getQuotes(instrumentId: number): Promise<Quote> {
+    return new Promise((resolve) => {
+      const quote = realtimeQuotesData[instrumentId.toString()]
+      if (!quote) {
+        throw new Error(`Quote not found for instrument ID: ${instrumentId}`)
+      }
+      resolve(quote)
+    })
+  }
+
+  async getRealtimeQuotes(): Promise<RealtimeQuotes> {
+    return new Promise((resolve) => {
+      resolve(realtimeQuotesData)
+    })
   }
 }
 
-export const getRealtimeQuotes = (instrumentIds: number[]): RealtimeQuotes => {
-  return realtimeQuotesData
-}
+export default QuotesService

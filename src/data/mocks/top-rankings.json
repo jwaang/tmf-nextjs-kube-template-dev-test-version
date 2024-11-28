@@ -258,5 +258,161 @@
       "publishAt": "2024-10-21T13:00:00Z",
       "uuid": "7305d5cb-82de-4a25-b315-149dddbe3488"
     }
+  },
+  {
+    "currentRank": {
+      "asOfDate": "2024-10-21",
+      "value": 6
+    },
+    "instrument": {
+      "exchange": "NASDAQ",
+      "instrumentId": 202674,
+      "name": "Marriott International",
+      "symbol": "MAR",
+      "sector": "Consumer Discretionary",
+      "quoteHistoricalSummary": {
+        "oneYearReturnPercent": 28.45,
+        "fiveYearReturnPercent": 42.31
+      },
+      "quote": {
+        "currentPrice": {
+          "amount": 198.42,
+          "currencyCode": "USD"
+        },
+        "dividendYield": 0.0089,
+        "lastTradeDate": "2024-10-22T17:09:39Z",
+        "marketCap": {
+          "amount": 58358904800,
+          "currencyCode": "USD"
+        },
+        "revenueGrowth": 8.12,
+        "grossMargin": 42.15,
+        "peRatio": 22.14,
+        "beta5y": 1.12,
+        "percentChange": 0.0142,
+        "priceChange": {
+          "amount": 2.78
+        }
+      },
+      "quantScore": {
+        "analystScore": 92.45,
+        "capsScore": 88.92,
+        "rank": 6,
+        "recencyScore": 95.12,
+        "serviceScore": 94.38,
+        "trend": "up",
+        "value": 92.71
+      }
+    },
+    "latestRecommendation": {
+      "path": "/4660/coverage/recommendations/2024/10/21/buy-marriott-travel-boom-continues/",
+      "productId": 4660,
+      "publishAt": "2024-10-21T14:00:00Z",
+      "uuid": "8405d5cb-82de-4a25-b315-149dddbe3489"
+    }
+  },
+  {
+    "currentRank": {
+      "asOfDate": "2024-10-21",
+      "value": 7
+    },
+    "instrument": {
+      "exchange": "NYSE",
+      "instrumentId": 202679,
+      "name": "Agilent Technologies",
+      "symbol": "A",
+      "sector": "Healthcare",
+      "quoteHistoricalSummary": {
+        "oneYearReturnPercent": -12.34,
+        "fiveYearReturnPercent": 65.78
+      },
+      "quote": {
+        "currentPrice": {
+          "amount": 112.85,
+          "currencyCode": "USD"
+        },
+        "dividendYield": 0.0075,
+        "lastTradeDate": "2024-10-22T17:09:39Z",
+        "marketCap": {
+          "amount": 32891045600,
+          "currencyCode": "USD"
+        },
+        "revenueGrowth": 5.89,
+        "grossMargin": 54.67,
+        "peRatio": 25.78,
+        "beta5y": 0.98,
+        "percentChange": -0.0089,
+        "priceChange": {
+          "amount": -1.01
+        }
+      },
+      "quantScore": {
+        "analystScore": 89.92,
+        "capsScore": 91.45,
+        "rank": 7,
+        "recencyScore": 93.21,
+        "serviceScore": 90.84,
+        "trend": "up",
+        "value": 91.35
+      }
+    },
+    "latestRecommendation": {
+      "path": "/4660/coverage/recommendations/2024/10/20/agilent-strong-fundamentals/",
+      "productId": 4660,
+      "publishAt": "2024-10-20T15:30:00Z",
+      "uuid": "9505d5cb-82de-4a25-b315-149dddbe3490"
+    }
+  },
+  {
+    "currentRank": {
+      "asOfDate": "2024-10-21",
+      "value": 8
+    },
+    "instrument": {
+      "exchange": "NASDAQ",
+      "instrumentId": 202700,
+      "name": "Abiomed",
+      "symbol": "ABMD",
+      "sector": "Healthcare",
+      "quoteHistoricalSummary": {
+        "oneYearReturnPercent": 31.45,
+        "fiveYearReturnPercent": 89.23
+      },
+      "quote": {
+        "currentPrice": {
+          "amount": 378.92,
+          "currencyCode": "USD"
+        },
+        "dividendYield": 0,
+        "lastTradeDate": "2024-10-22T17:09:39Z",
+        "marketCap": {
+          "amount": 17234567800,
+          "currencyCode": "USD"
+        },
+        "revenueGrowth": 12.45,
+        "grossMargin": 82.34,
+        "peRatio": 42.12,
+        "beta5y": 1.24,
+        "percentChange": 0.0234,
+        "priceChange": {
+          "amount": 8.67
+        }
+      },
+      "quantScore": {
+        "analystScore": 88.76,
+        "capsScore": 87.92,
+        "rank": 8,
+        "recencyScore": 91.45,
+        "serviceScore": 89.67,
+        "trend": "up",
+        "value": 89.45
+      }
+    },
+    "latestRecommendation": {
+      "path": "/4660/coverage/recommendations/2024/10/19/abiomed-innovation-leader/",
+      "productId": 4660,
+      "publishAt": "2024-10-19T16:00:00Z",
+      "uuid": "1605d5cb-82de-4a25-b315-149dddbe3491"
+    }
   }
 ]

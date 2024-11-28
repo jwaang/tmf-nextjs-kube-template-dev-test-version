@@ -1,4 +1,4 @@
-import {QuantScore} from "./common"
+import { QuantScore } from "./common"
 
 export type Instrument = {
   exchange: string
@@ -33,6 +33,14 @@ export type Quote = {
   percentChange: number
   priceChange: {
     amount: number
+  }
+  fiftyTwoWeekRange: {
+    min: { amount: number },
+    max: { amount: number }
+  }
+  dailyRange: {
+    min: { amount: number },
+    max: { amount: number }
   }
 }
 

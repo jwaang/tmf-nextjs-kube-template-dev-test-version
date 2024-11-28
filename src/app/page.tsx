@@ -1,4 +1,3 @@
-
 import apolloServerClient from 'src/lib/apollo-server-client'
 import RankingsService from '~data/services/rankings-service'
 import ArticlesService from '~data/services/article-service'
@@ -6,19 +5,23 @@ import ArticleList from '~components/articles/articleList'
 import WatchList from '~components/watchList'
 import Rankings from '~components/rankingsTable'
 import ProductsService from '~data/services/products-service'
-
+import QuotesService from '~data/services/quotes-service'
 export default async function Home() {
   const client = await apolloServerClient()
   const productsService = new ProductsService(client)
   const rankingsService = new RankingsService(client)
   const articlesService = new ArticlesService(client)
+  const quotesService = new QuotesService(client)
 
-  const userProducts = await productsService.getUserProdcuts()
-  const topRankings  = await rankingsService.getTopRankings()
-  const latestArticles = await articlesService.getLatestArticles()
+  const [userProducts, topRankings, latestArticles, realtimeQuotes] = await Promise.all([
+    productsService.getUserProdcuts(),
+    rankingsService.getTopRankings(),
+    articlesService.getLatestArticles(),
+    quotesService.getRealtimeQuotes()
+  ])
 
   return (
-    <main>
+    <main className="flex flex-col w-full">
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-100 to-blue-700">
           The Motley UFO
@@ -33,7 +36,7 @@ export default async function Home() {
           <h2 className="text-2xl font-semibold text-cyan-400 mb-4 tracking-wide">
             Watching for Suspicious Behavior:
           </h2>
-          <WatchList />
+          <WatchList realtimeQuotes={realtimeQuotes} />
         </div>
 
         <div className="backdrop-blur-sm bg-blue-900/20 rounded-lg p-6 border border-cyan-500/30 shadow-lg shadow-cyan-500/20 mb-12">

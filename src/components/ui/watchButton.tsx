@@ -1,18 +1,27 @@
 'use client'
 
+import { useWatchList } from 'src/contexts/WatchListContext'
+import { Instrument } from '~types/quotes'
+
 type WatchButtonProps = {
+  instrument?: Instrument
   instrumentId: number
-  isCurrentlyWatching?: boolean
   includeText?: boolean
 }
 
-const WatchButton = ({ instrumentId, isCurrentlyWatching = false, includeText = false }: WatchButtonProps) => {
+const WatchButton = ({ instrument, instrumentId, includeText = false }: WatchButtonProps) => {
+  const { isWatching, addToWatchList, removeFromWatchList } = useWatchList()
+  const isCurrentlyWatching = isWatching(instrumentId)
   const text = includeText ? isCurrentlyWatching ? 'Watching' : 'Watch' : ''
   const indicator = isCurrentlyWatching ? '-' : '+'
   const textColor = isCurrentlyWatching ? 'text-red-500' : 'text-green-500'
 
   const onClick = () => {
-    console.log('Toggle watch state for', instrumentId)
+    if (isCurrentlyWatching) {
+      removeFromWatchList(instrumentId)
+    } else {
+      addToWatchList(instrument)
+    }
   }
 
   return (
